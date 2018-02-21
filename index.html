@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 
 <head>
     <meta charset="utf-8">
 
+    <!-- css styling -->
     <style>
         canvas {
             border: 1px solid;
@@ -15,12 +16,25 @@
 
 <body>
     <h1>Static Piece</h1>
-    <canvas id='footballPitch' width='1000' height='600'></canvas>
+    <canvas id='spurs_badge' width='400' height='600'></canvas>
 </body>
 
+<!-- javascript -->
 <script type="text/javascript">
-    var c = document.getElementById("footballPitch");
+    var c = document.getElementById("spurs_badge");
     var ctx = c.getContext("2d");
+
+    //spurs cockrel
+    
+    ctx.beginPath();
+    ctx.moveTo(130,65);
+    ctx.quadraticCurveTo(172,80,150,122);
+    ctx.quadraticCurveTo(120,170,116,190);
+    ctx.quadraticCurveTo(98,240,190,290);
+    ctx.quadraticCurveTo(235,320,213,390);
+
+
+    ctx.stroke();
 </script>
 
 </html>
