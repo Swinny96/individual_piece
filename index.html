@@ -55,28 +55,121 @@
     ctx.closePath();
     ctx.fill();
     
+    
+    //white head patch
     ctx.beginPath();
     ctx.moveTo (142,56);
     ctx.quadraticCurveTo(184,80,158,122);
-    ctx.quadraticCurveTo(184,130,190,120);
-    ctx.quadraticCurveTo(195,50,143,55);
+    ctx.quadraticCurveTo(184,125,188,140);
+    ctx.quadraticCurveTo(200,50,143,55);
     ctx.closePath();
-    ctx.fillStyle ="white";
+    ctx.fillStyle ="#fff";
     ctx.fill();
     
+    //eye
     ctx.beginPath();
     ctx.arc(159, 67, 7, 0, 2 * Math.PI, false);
     ctx.fillStyle ="#132257";
     ctx.fill();
     
+    //football
     ctx.beginPath();
     ctx.arc(202, 490, 75, 0, 2 * Math.PI, false);
     ctx.fillStyle ="#132257";
     ctx.fill();
     
+    //valve ellipse
     ctx.beginPath();
+    ctx.ellipse(150, 475, 10, 16, 14 * Math.PI/180, 0, 2 * Math.PI);
+    //ellipse x,y, major radius, minor radius, rotation, start angle, end angle 
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 3;
+    ctx.stroke();
     
-   
+    //ball grooves 1
+    ctx.beginPath();
+    ctx.moveTo(140,472);
+    ctx.quadraticCurveTo(140,472,127,465);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //ball grooves 2
+    ctx.beginPath();
+    ctx.moveTo(155,432);
+    ctx.quadraticCurveTo(150,440,152,460);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //ball grooves 3
+    ctx.beginPath();
+    ctx.moveTo(252,432);
+    ctx.quadraticCurveTo(190,430,159,466);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //ball grooves 4
+    ctx.beginPath();
+    ctx.moveTo(275,505);
+    ctx.quadraticCurveTo(190,510,158,484);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //ball grooves 5
+    ctx.beginPath();
+    ctx.moveTo(198,566);
+    ctx.quadraticCurveTo(140,535,146,492);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //ball grooves 6
+    ctx.beginPath();
+    ctx.moveTo(130,515);
+    ctx.quadraticCurveTo(126,500,142,486);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //laces
+    ctx.beginPath();
+    ctx.ellipse(230, 505, 26, 20, 6 * Math.PI/180, 0, 2 * Math.PI);
+    //ellipse x,y, major radius, minor radius, rotation, start angle, end angle 
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    
+      //left lace
+    ctx.beginPath();
+    ctx.moveTo(220,495);
+    ctx.quadraticCurveTo(222,500,220,515);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //middle lace
+    ctx.beginPath();
+    ctx.moveTo(230,495);
+    ctx.quadraticCurveTo(232,500,230,515);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    //right lace
+    ctx.beginPath();
+    ctx.moveTo(240,495);
+    ctx.quadraticCurveTo(242,500,240,515);
+    ctx.strokeStyle ="#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    
+  
+    
     //ctx.stroke();
     
     
