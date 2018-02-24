@@ -24,10 +24,20 @@
     var c = document.getElementById("spurs_badge");
     var ctx = c.getContext("2d");
     
+    //funtions
+    
+    function colourShape(c){ // using a function to colour and fill shapes
+        ctx.fillStyle = c; // adding a colour fill style command
+        ctx.fill(); 
+    }
+    
+    function colourLine(c,w){
+        ctx.strokeStyle = c;//colour syle of strokes command
+        ctx.lineWidth = w; // line width command
+    }
+    
     //spurs cockrel
     
-    ctx.fillStyle ="#132257";
-
     ctx.beginPath();
     ctx.moveTo(130,55);
     ctx.quadraticCurveTo(182,80,150,122);
@@ -53,9 +63,8 @@
     ctx.quadraticCurveTo(200,100,194,85);
     ctx.quadraticCurveTo(180,40,129,54);
     ctx.closePath();
-    ctx.fill();
-    
-    
+    colourShape('#132257');//colourShape function call
+        
     //white head patch
     ctx.beginPath();
     ctx.moveTo (142,56);
@@ -63,20 +72,17 @@
     ctx.quadraticCurveTo(184,125,188,140);
     ctx.quadraticCurveTo(200,50,143,55);
     ctx.closePath();
-    ctx.fillStyle ="#fff";
-    ctx.fill();
+    colourShape('#fff');
     
     //eye
     ctx.beginPath();
     ctx.arc(159, 67, 7, 0, 2 * Math.PI, false);
-    ctx.fillStyle ="#132257";
-    ctx.fill();
+    colourShape('#132257');//colourShape function call
     
     //football
     ctx.beginPath();
     ctx.arc(202, 490, 75, 0, 2 * Math.PI, false);
-    ctx.fillStyle ="#132257";
-    ctx.fill();
+    colourShape('#132257');//colourShape function call
     
     //valve ellipse
     ctx.beginPath();
@@ -143,7 +149,7 @@
     ctx.stroke();
     
     
-      //left lace
+    //left lace
     ctx.beginPath();
     ctx.moveTo(220,495);
     ctx.quadraticCurveTo(222,500,220,515);
@@ -166,13 +172,7 @@
     ctx.strokeStyle ="#fff";
     ctx.lineWidth = 4;
     ctx.stroke();
-    
-    
-  
-    
-    //ctx.stroke();
-    
-    
+      
 </script>
 
 </html>
