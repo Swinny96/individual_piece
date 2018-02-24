@@ -26,25 +26,42 @@
     
     //funtions
     
-    function colourShape(c){ // using a function to colour and fill shapes
+    // using a function to colour and fill shapes
+    function colourShape(c){ 
         ctx.fillStyle = c; // adding a colour fill style command
         ctx.fill(); //fill shape
     }
     
-    function colourLine(c,w){ // function for colour and width of strokes
+    // function for colour and width of strokes
+    function colourLine(c,w){ 
         ctx.strokeStyle = c;//colour syle of strokes command
         ctx.lineWidth = w; // line width command
         ctx.stroke(); //commit stroke
     }
     
-    function shapeBuilder(){
+    //function to start the shape
+    function startShape(x,y){
+        ctx.beginPath();//begin the path
+        ctx.moveTo(x,y); //starting point on the x,y axix
+        
+    }
     
+    //function to draw circle
+    function circle(x,y,r){
+        ctx.beginPath(); //begin the path
+        ctx.arc(x, y, r, 0, 2 * Math.PI, false);//x & y coordinates circle centre and r is radius of cirlce
+    }
+    
+    //function to draw ellipse
+    function ellipse(x,y,rad1,rad2,a){
+        ctx.beginPath();
+        ctx.ellipse(x, y, rad1, rad2, a * Math.PI/180, 0, 2 * Math.PI);
+    //ellipse x & y coordinates, major radius, minor radius, rotation, start angle, end angle 
     }
     
     //spurs cockrel
     
-    ctx.beginPath();
-    ctx.moveTo(130,55);
+    startShape(130,55); // startShape funtion call
     ctx.quadraticCurveTo(182,80,150,122);
     ctx.quadraticCurveTo(120,170,116,190);
     ctx.quadraticCurveTo(98,240,190,290);
@@ -67,92 +84,73 @@
     ctx.quadraticCurveTo(190,210,192,150);
     ctx.quadraticCurveTo(200,100,194,85);
     ctx.quadraticCurveTo(180,40,129,54);
-    ctx.closePath();
     colourShape('#132257');//colourShape function call
         
     //white head patch
-    ctx.beginPath();
-    ctx.moveTo (142,56);
+    startShape(142,56); // startShape funtion call
     ctx.quadraticCurveTo(184,80,158,122);
     ctx.quadraticCurveTo(184,125,188,140);
     ctx.quadraticCurveTo(200,50,143,55);
-    ctx.closePath();
-    colourShape('#fff');
+    colourShape('#fff'); //colourShape function call
     
     //eye
-    ctx.beginPath();
-    ctx.arc(159, 67, 7, 0, 2 * Math.PI, false); //circle shape
+    circle(159,67,7); //circle function call
     colourShape('#132257');//colourShape function call
     
     //football
-    ctx.beginPath();
-    ctx.arc(202, 490, 75, 0, 2 * Math.PI, false); // circle shape
+    circle (202,490,75); //circle function call
     colourShape('#132257');//colourShape function call
     
     //valve ellipse
-    ctx.beginPath();
-    ctx.ellipse(150, 475, 10, 16, 14 * Math.PI/180, 0, 2 * Math.PI);
-    //ellipse x,y, major radius, minor radius, rotation, start angle, end angle 
+    ellipse(150,475,10,16,14);//ellipse function call
     colourLine('#fff', 3);//colourLine function call
     
     //ball grooves 1
-    ctx.beginPath();
-    ctx.moveTo(140,472);
+    startShape(140,472); // startShape funtion call
     ctx.quadraticCurveTo(140,472,127,465);
     colourLine('#fff', 4);//colourLine function call
     
     //ball grooves 2
-    ctx.beginPath();
-    ctx.moveTo(155,432);
+    startShape(155,432); // startShape funtion call
     ctx.quadraticCurveTo(150,440,152,460);
     colourLine('#fff', 4);//colourLine function call
     
     //ball grooves 3
-    ctx.beginPath();
-    ctx.moveTo(252,432);
+    startShape(252,432); // startShape funtion call
     ctx.quadraticCurveTo(190,430,159,466);
     colourLine('#fff', 4);//colourLine function call
     
     //ball grooves 4
-    ctx.beginPath();
-    ctx.moveTo(275,505);
+    startShape(275,505); // startShape funtion call
     ctx.quadraticCurveTo(190,510,158,484);
     colourLine('#fff', 4);//colourLine function call
     
     //ball grooves 5
-    ctx.beginPath();
-    ctx.moveTo(198,566);
+    startShape(198,566); // startShape funtion call
     ctx.quadraticCurveTo(140,535,146,492);
     colourLine('#fff', 4);//colourLine function call
     
     //ball grooves 6
-    ctx.beginPath();
-    ctx.moveTo(130,515);
+    startShape(130,515); // startShape funtion call
     ctx.quadraticCurveTo(126,500,142,486);
     colourLine('#fff', 4);//colourLine function call
     
     //laces
-    ctx.beginPath();
-    ctx.ellipse(230, 505, 26, 20, 6 * Math.PI/180, 0, 2 * Math.PI);
-    //ellipse x,y, major radius, minor radius, rotation, start angle, end angle 
+    ellipse(230,505,26,20,6);//ellipse function call
     colourLine('#fff', 4);//colourLine function call
     
-    
     //left lace
-    ctx.beginPath();
-    ctx.moveTo(220,495);
+    startShape(220,495); //startShape funtion call
     ctx.quadraticCurveTo(222,500,220,515);
     colourLine('#fff', 4);//colourLine function call
     
     //middle lace
-    ctx.beginPath();
-    ctx.moveTo(230,495);
+    startShape(230,495); //startShape funtion call
     ctx.quadraticCurveTo(232,500,230,515);
     colourLine('#fff', 4);//colourLine function call
     
     //right lace
-    ctx.beginPath();
-    ctx.moveTo(240,495);
+    startShape(240,495); //startShape funtion call
     ctx.quadraticCurveTo(242,500,240,515);
     colourLine('#fff', 4);//colourLine function call
       
