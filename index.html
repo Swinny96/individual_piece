@@ -15,14 +15,20 @@
 </head>
 
 <body>
+    <!-- defintion of static canvas area -->
     <h1>Static Piece</h1>
-    <canvas id='spurs_badge' width='400' height='600'></canvas>
+    <canvas id='static' width='400' height='600'></canvas>
+    
+    <!-- defintion of animation canvas area -->
+    <h1>Animation Piece</h1>
+    <canvas id='animation' width='400' height='600'></canvas>
 </body>
 
 <!-- javascript -->
 <script type="text/javascript">
-    var c = document.getElementById("spurs_badge");
+    var c = document.getElementById("static");
     var ctx = c.getContext("2d");
+    
     
     //funtions
     
@@ -153,6 +159,15 @@
     startShape(240,495); //startShape funtion call
     ctx.quadraticCurveTo(242,500,240,515);
     colourLine('#fff', 4);//colourLine function call
+    
+    var c = document.getElementById("animation");
+    ctx = c.getContext("2d");
+    
+    circle(100,100,50);
+    colourShape('#cb27ab');
+    
+    
+    
       
 </script>
 
