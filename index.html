@@ -8,11 +8,18 @@
     <style>
         canvas {
             border: 1px solid;
+            }
+        
+        h1{
+        font-family:arial, sans-serif;
         }
+    
     </style>
 
 <!-- javascript -->
 <script type="text/javascript">
+    
+    //load javascript when browser loads
     window.onload = function(){
     
     // link to and call up to canvas id 'Static'
@@ -22,6 +29,13 @@
      // link to and call up to canvas id 'animation'
     var canvas = document.getElementById("animation");
     var ct = canvas.getContext("2d");
+    
+    // variables for the animation
+    var canvasWidth = canvas.width;
+    var canvasHeight = canvas.height;
+
+    var angle = 10;
+
     
     
     //funtions
@@ -62,9 +76,37 @@
         ctx.ellipse(x, y, rad1, rad2, a * Math.PI/180, 0, 2 * Math.PI);
     //ellipse x & y coordinates, major radius, minor radius, rotation, start angle, end angle 
     }
+        
+    function drawAnimatedCircle() {
+        ct.clearRect(0, 0, canvasWidth, canvasHeight);//clears entire canvas
+
+        // color in the background
+        ct.fillStyle = "#fff";
+        ct.fillRect(0, 0, canvasWidth, canvasHeight);
+        //defines area from top left corner(x,y - 0,0), total width and height defined by canvasWidth and canvasHeight
+
+        // draw the circle
+        ct.beginPath();
+
+        var radius = 15 + 150 * Math.abs(Math.cos(angle));//adjusts the circle radius
+        ct.arc(225, 225, radius, 0, Math.PI * 2, false);//circle shape
+        ct.closePath();
+
+        // color in the circle
+        ct.fillStyle = "#d15fe0";
+        ct.fill();
+
+        angle += Math.PI / 100; //global variable adjusts speed of the circle changing size 
+
+        requestAnimationFrame(drawAnimatedCircle);//function to redraw the screen
+        
+        //code from: https://www.kirupa.com/html5/creating_simple_html5_canvas_animation.htm
+    }
     
     //static canvas ---------------------
     
+    
+    //main spurs cockrell    
     startShape(130,55); // startShape funtion call
     ctx.quadraticCurveTo(182,80,150,122);
     ctx.quadraticCurveTo(120,170,116,190);
@@ -101,7 +143,7 @@
     circle(159,67,7); //circle function call
     colourShape('#132257');//colourShape function call
     
-    //football
+    //main football shape 
     circle (202,490,75); //circle function call
     colourShape('#132257');//colourShape function call
     
@@ -157,10 +199,10 @@
     startShape(240,495); //startShape funtion call
     ctx.quadraticCurveTo(242,500,240,515);
     colourLine('#fff', 4);//colourLine function call
+        
     
-    //animation canvas --------------------
-    
-    rectangle(50,50,100,100,'#cb43d6',ct); 
+    //animated canvas ---------------------    
+    drawAnimatedCircle(); //drawAnimatedCircle function call
             
     }
 
