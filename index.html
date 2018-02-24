@@ -11,23 +11,17 @@
         }
     </style>
 
-
-</head>
-
-<body>
-    <!-- defintion of static canvas area -->
-    <h1>Static Piece</h1>
-    <canvas id='static' width='400' height='600'></canvas>
-    
-    <!-- defintion of animation canvas area -->
-    <h1>Animation Piece</h1>
-    <canvas id='animation' width='400' height='600'></canvas>
-</body>
-
 <!-- javascript -->
 <script type="text/javascript">
-    var c = document.getElementById("static");
-    var ctx = c.getContext("2d");
+    window.onload = function(){
+    
+    // link to and call up to canvas id 'Static'
+    var canvas = document.getElementById("static");
+    var ctx = canvas.getContext("2d");
+    
+     // link to and call up to canvas id 'animation'
+    var canvas = document.getElementById("animation");
+    var ct = canvas.getContext("2d");
     
     
     //funtions
@@ -49,13 +43,17 @@
     function startShape(x,y){
         ctx.beginPath();//begin the path
         ctx.moveTo(x,y); //starting point on the x,y axix
-        
     }
     
     //function to draw circle
     function circle(x,y,r){
-        ctx.beginPath(); //begin the path
-        ctx.arc(x, y, r, 0, 2 * Math.PI, false);//x & y coordinates circle centre and r is radius of cirlce
+        ctx.beginPath(); //begin the path 
+        ctx.arc(x, y, r, 0, 2 * Math.PI, false);//x & y coords from centre, r is radius
+    }
+        
+    function rectangle(x,y,l,h,c,f){
+        f.fillStyle = c;
+        f.fillRect(x, y, l, h); 
     }
     
     //function to draw ellipse
@@ -65,7 +63,7 @@
     //ellipse x & y coordinates, major radius, minor radius, rotation, start angle, end angle 
     }
     
-    //spurs cockrel
+    //static canvas ---------------------
     
     startShape(130,55); // startShape funtion call
     ctx.quadraticCurveTo(182,80,150,122);
@@ -160,15 +158,24 @@
     ctx.quadraticCurveTo(242,500,240,515);
     colourLine('#fff', 4);//colourLine function call
     
-    var c = document.getElementById("animation");
-    ctx = c.getContext("2d");
+    //animation canvas --------------------
     
-    circle(100,100,50);
-    colourShape('#cb27ab');
-    
-    
-    
-      
+    rectangle(50,50,100,100,'#cb43d6',ct); 
+            
+    }
+
 </script>
+
+</head>
+
+<body>
+    <!-- defintion of static canvas area -->
+    <h1>Static Piece</h1>
+    <canvas id='static' width='400' height='600'></canvas>
+    
+    <!-- defintion of animation canvas area -->
+    <h1>Animation Piece</h1>
+    <canvas id='animation' width='450' height='450'></canvas>
+</body>
 
 </html>
