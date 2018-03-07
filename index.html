@@ -34,7 +34,7 @@
     var canvasWidth = canvas.width;
     var canvasHeight = canvas.height;
 
-    var angle = 10;
+    var angle = 0;//angle global variable - allows change of radius everytime browser redraws the screen which when placed in radius variable in the drawAnimatedCircle funtion below
 
     
     
@@ -65,11 +65,6 @@
         ctx.arc(x, y, r, 0, 2 * Math.PI, false);//x & y coords from centre, r is radius
     }
         
-    function rectangle(x,y,l,h,c,f){
-        f.fillStyle = c;
-        f.fillRect(x, y, l, h); 
-    }
-    
     //function to draw ellipse
     function ellipse(x,y,rad1,rad2,a){
         ctx.beginPath();
@@ -88,8 +83,8 @@
         // draw the circle
         ct.beginPath();
 
-        var radius = 15 + 150 * Math.abs(Math.cos(angle));//adjusts the circle radius
-        ct.arc(225, 225, radius, 0, Math.PI * 2, false);//circle shape
+        var radius = 15 + 150 * Math.abs(Math.cos(angle));//variable radius adjusts the circle radius 
+        ct.arc(225, 225, radius, 0, Math.PI * 2, false);//circle shape with variable radius
         ct.closePath();
 
         // color in the circle
@@ -98,9 +93,9 @@
 
         angle += Math.PI / 100; //global variable adjusts speed of the circle changing size 
 
-        requestAnimationFrame(drawAnimatedCircle);//function to redraw the screen
+        requestAnimationFrame(drawAnimatedCircle);//call the circle drawAnimatedCircle function everytime the browser decideds to redraw the screen
         
-        //code from: https://www.kirupa.com/html5/creating_simple_html5_canvas_animation.htm
+        //Animatied Circle code from: https://www.kirupa.com/html5/creating_simple_html5_canvas_animation.htm
     }
     
     //static canvas ---------------------
